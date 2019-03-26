@@ -61,7 +61,28 @@ Route::prefix('study')->group(function (){
     //  获取红包的路由
     Route::any('get/bonus', 'Study\BonusController@getBonus');
 
+    //  竞猜添加页面
+    Route::get('guess/add', 'Study\GuessController@add');
+    //  执行竞猜添加
+    Route::post('guess/doAdd', 'Study\GuessController@doAdd');
+    //  竞猜列表页面
+    Route::get('guess/list', 'Study\GuessController@list');
+
+    //  竞猜
+    Route::get('guess/guess', 'Study\GuessController@guess');
+    //  竞猜
+    Route::get('guess/result', 'Study\GuessController@checkResult');
+    //  竞猜
+    Route::post('guess/doGuess', 'Study\GuessController@doGuess');
 });
+
+
+
+//  周考
+Route::any('demo', 'ZhoukController@demo');
+Route::any('doSing', 'ZhoukController@doSing');
+Route::any('getList', 'ZhoukController@getList');
+
 
 
 
