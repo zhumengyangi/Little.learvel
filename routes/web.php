@@ -74,6 +74,12 @@ Route::prefix('study')->group(function (){
     Route::get('guess/result', 'Study\GuessController@checkResult');
     //  竞猜
     Route::post('guess/doGuess', 'Study\GuessController@doGuess');
+
+    //  抽奖页面
+    Route::get('lottery/index', 'Study\LotteryController@lottery');
+    //  执行抽奖页面
+//    Route::post('lottery/do', 'Study\LotteryController@doLottery');
+    Route::post("lottery/do","Study\LotteryController@doLottery");
 });
 
 
